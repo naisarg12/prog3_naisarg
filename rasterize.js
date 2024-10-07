@@ -160,8 +160,8 @@ function setupShaders() {
     altPosition = false;
     setTimeout(function alterPosition() {
         altPosition = !altPosition;
-        setTimeout(alterPosition, 2000);
-    }, 2000); // switch flag value every 2 seconds
+        setTimeout(alterPosition, 20);
+    }, 20); // switch flag value every 2 seconds
 } // end setup shaders
 var bgColor = 0;
 // render the loaded model

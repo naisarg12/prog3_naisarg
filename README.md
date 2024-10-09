@@ -1,3 +1,3 @@
 # prog3
 
-helper files for the intro cg class's third programming assignment
+this is the readme file for the partial_submission of the 3rd program.

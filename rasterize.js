@@ -5,6 +5,7 @@ const WIN_Z = 0;  // default graphics window z coord in world space
 const WIN_LEFT = 0; const WIN_RIGHT = 1;  // default left and right x coords in world space
 const WIN_BOTTOM = 0; const WIN_TOP = 1;  // default top and bottom y coords in world space
 const INPUT_TRIANGLES_URL = "https://ncsucgclass.github.io/prog3/triangles.json"; // triangles file loc
+const INPUT_ELLIPSOIDS_URL = "https://ncsucgclass.github.io/prog3/ellipsoids.json";
 //const INPUT_SPHERES_URL = "https://ncsucgclass.github.io/prog3/spheres.json"; // spheres file loc
 var Eye = new vec4.fromValues(0.5,0.5,-0.5,1.0); // default eye position in world space
 
@@ -160,14 +161,14 @@ function setupShaders() {
     altPosition = false;
     setTimeout(function alterPosition() {
         altPosition = !altPosition;
-        setTimeout(alterPosition, 20);
-    }, 20); // switch flag value every 2 seconds
+        setTimeout(alterPosition, 2000);
+    }, 2000); // switch flag value every 2 seconds
 } // end setup shaders
 var bgColor = 0;
 // render the loaded model
 function renderTriangles() {
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT); // clear frame/depth buffers
-    bgColor = (bgColor < 1) ? (bgColor + 0.1) : 0;
+    bgColor = (bgColor < 1) ? (bgColor + 0.001) : 0;
     gl.clearColor(bgColor, 0, 0, 1.0);
     requestAnimationFrame(renderTriangles);
     // vertex buffer: activate and feed into vertex shader
